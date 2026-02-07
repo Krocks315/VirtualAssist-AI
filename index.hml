@@ -1,43 +1,37 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>VirtualAssist.AI — Lyra Verse Edition</title>
-<meta name="description" content="VirtualAssist.AI by Lyra‑Sha — a luxurious AI receptionist and digital assistant for modern brands." />
-<meta name="keywords" content="AI receptionist, Lyra‑Sha, NovaVerse, Virtual Assistant, Lyra Verse" />
+<title>Lyra Vault × VirtualAssist.AI</title>
+<meta name="description" content="An automated Virtual Assistant aligned with Lyra Vault’s elegance and ethics – built for NovaVerse." />
 <meta name="author" content="Lyra Verse Team" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* 🌸 Lyra‑Verse Color System */
 :root {
-  --primary: #f2a4c5;       /* Lyra Pink */
-  --primary-dark: #e28bab;  /* Deeper Pink */
-  --secondary: #ead9c7;     /* Champagne */
-  --bg: #fffafc;            /* Soft Ivory */
-  --text: #1e1b22;          /* Charcoal Slate */
-  --border: #ead9c7;
+  --primary:#f2a4c5;            /* Lyra Pink */
+  --primary-dark:#e28bab;       /* deeper pink */
+  --secondary:#ead9c7;          /* champagne */
+  --accent:#bfa699;
+  --bg:#fffafc;                 /* soft ivory */
+  --text:#1e1b22;
+  --border:#ead9c7;
 }
-
-/* Reset & Base */
-* {margin:0;padding:0;box-sizing:border-box;}
-body {
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
   font-family:'Inter',sans-serif;
   background:var(--bg);
   color:var(--text);
   line-height:1.6;
 }
-
-/* Navigation */
-nav {
+nav{
+  position:sticky;top:0;
   background:white;
-  position:sticky;
-  top:0;
-  z-index:100;
   border-bottom:1px solid var(--border);
+  z-index:10;
 }
-nav .container {
+nav .wrap{
   max-width:1200px;
   margin:auto;
   display:flex;
@@ -45,250 +39,171 @@ nav .container {
   align-items:center;
   padding:1rem 2rem;
 }
-.logo {
-  font-weight:700;
-  font-size:1.4rem;
-  color:var(--primary);
-}
-.nav-links a {
-  margin-left:2rem;
-  text-decoration:none;
-  color:var(--text);
-  font-weight:500;
-}
-.nav-links a:hover {color:var(--primary-dark);}
-
-/* Hero */
-header.hero {
-  text-align:center;
-  padding:5rem 2rem;
+.logo{font-weight:700;font-size:1.3rem;color:var(--primary);}
+.nav-links a{text-decoration:none;color:var(--text);margin-left:1.5rem;font-weight:500;}
+.nav-links a:hover{color:var(--primary-dark);}
+header{
   background:linear-gradient(to bottom,white,var(--secondary));
-}
-header.hero h1 {
-  font-size:3rem;
-  color:var(--primary-dark);
-  margin-bottom:1rem;
-}
-header.hero p {
-  font-size:1.2rem;
-  max-width:650px;
-  margin:auto;
-  color:var(--text);
-  margin-bottom:2rem;
-}
-.btn {
-  display:inline-block;
-  padding:0.9rem 1.8rem;
-  border-radius:0.75rem;
-  border:none;
-  cursor:pointer;
-  font-weight:600;
-  transition:0.3s;
-}
-.btn-primary {background:var(--primary);color:white;}
-.btn-primary:hover {background:var(--primary-dark);}
-.btn-secondary {
-  background:white;
-  color:var(--text);
-  border:2px solid var(--border);
-}
-.stats {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:2rem;
-  margin-top:3rem;
-}
-.stat {
   text-align:center;
+  padding:5rem 1.5rem;
 }
-.stat span.number {
-  display:block;
-  font-size:2rem;
-  color:var(--primary);
-  font-weight:700;
+header h1{color:var(--primary-dark);font-size:3rem;margin-bottom:1rem;}
+header p{max-width:650px;margin:auto;color:var(--text-muted,#333);}
+.btn{
+  background:var(--primary);
+  color:white;
+  border:none;
+  border-radius:.5rem;
+  padding:.9rem 1.8rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
 }
-
-/* Sections */
-section {
-  padding:4rem 1.5rem;
+.btn:hover{background:var(--primary-dark);}
+section{
   max-width:1000px;
   margin:auto;
+  padding:4rem 1.5rem;
 }
-section h2 {
-  text-align:center;
-  color:var(--primary-dark);
-  margin-bottom:2rem;
-}
-.features-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:2rem;
-}
-.feature-card {
-  background:white;
+section h2{text-align:center;color:var(--primary-dark);margin-bottom:2rem;}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;}
+.card{
+  background:#fff;
   border:1px solid var(--border);
-  border-radius:0.75rem;
-  padding:2rem 1.5rem;
+  border-radius:.75rem;
+  padding:2rem;
+  box-shadow:0 2px 6px rgba(0,0,0,.05);
   text-align:center;
-  box-shadow:0 2px 6px rgba(0,0,0,0.05);
   transition:transform .25s;
 }
-.feature-card:hover {transform:translateY(-5px);}
-.feature-card .icon {font-size:2rem;margin-bottom:0.5rem;}
+.card:hover{transform:translateY(-6px);}
+.card .icon{font-size:2rem;margin-bottom:.5rem;}
 
-/* Demo Chat Box (visual only) */
-.demo-box {
-  max-width:500px;
-  margin:2rem auto;
+/* Vault Portal Section */
+.vault{
+  margin-top:2rem;
+  background:white;
+  border-radius:1rem;
+  padding:2rem;
+  border:1px solid var(--border);
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+form label{display:block;margin-bottom:.5rem;font-weight:500;}
+form input{
+  width:100%;
+  padding:.7rem;
+  margin-bottom:1rem;
+  border:1px solid var(--border);
+  border-radius:.5rem;
+}
+form button{width:100%;}
+
+.chatbox{
+  margin-top:2rem;
   background:white;
   border:1px solid var(--border);
   border-radius:1rem;
   overflow:hidden;
   box-shadow:0 3px 8px rgba(0,0,0,0.1);
 }
-.demo-head {
+.chat-header{
   background:var(--primary);
   color:white;
   padding:1rem;
   font-weight:600;
 }
-.demo-messages {
-  min-height:250px;
-  padding:1rem;
-  background:var(--bg);
-}
-.demo-input {
-  display:flex;
-  border-top:1px solid var(--border);
-}
-.demo-input input {
-  flex:1;
-  padding:0.8rem;
-  border:none;
-  outline:none;
-  font-family:inherit;
-}
-.demo-input button {
-  background:var(--primary);
-  color:white;
-  border:none;
-  padding:0 1.5rem;
-  font-weight:600;
-  cursor:pointer;
-}
-footer {
-  text-align:center;
-  padding:2rem 1rem;
-  border-top:1px solid var(--border);
-  color:var(--primary-dark);
-  background:var(--bg);
-  font-size:0.9rem;
-}
-@media(max-width:768px){
-  header.hero h1{font-size:2rem;}
-  .stats{gap:1rem;}
-}
+.chat-body{height:260px;overflow-y:auto;padding:1rem;background:var(--bg);}
+.chat-input{display:flex;border-top:1px solid var(--border);}
+.chat-input input{flex:1;padding:.8rem;border:none;outline:none;}
+.chat-input button{background:var(--primary);color:white;border:none;padding:0 1.5rem;font-weight:600;cursor:pointer;}
+footer{text-align:center;padding:2rem;font-size:.9rem;color:var(--primary-dark);}
+@media(max-width:768px){header h1{font-size:2rem;}}
 </style>
 </head>
 
 <body>
 
-<!-- 🌸 Navigation -->
 <nav>
-  <div class="container">
-    <div class="logo">VirtualAssist.AI</div>
+  <div class="wrap">
+    <div class="logo">Lyra Vault × VirtualAssist.AI</div>
     <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#demo">Demo</a>
       <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#vault">Lyra Vault</a>
     </div>
   </div>
 </nav>
 
-<!-- 🌸 Hero Section -->
-<header class="hero">
-  <h1>Virtual Assistants with a Heartbeat ✨</h1>
-  <p>Lyra‑Verse technology meeting human warmth — your digital receptionist that never sleeps and always smiles.</p>
-  <button class="btn btn-primary" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'});">Try the Demo</button>
-  <div class="stats">
-    <div class="stat"><span class="number">24/7</span>Availability</div>
-    <div class="stat"><span class="number">99%</span>Satisfaction</div>
-    <div class="stat"><span class="number">5min</span>Setup Time</div>
-  </div>
+<header>
+  <h1>Automation with Grace ✨</h1>
+  <p>The Lyra Vault‑aligned Virtual Assistant automates your calls, messages & bookings while honoring your values and aesthetic.</p>
+  <button class="btn" onclick="document.getElementById('vault').scrollIntoView({behavior:'smooth'})">Open Lyra Vault Portal</button>
 </header>
 
-<!-- 🌸 Features Section -->
 <section id="features">
   <h2>What She Can Do for You</h2>
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="icon">📞</div>
-      <h3>Voice AI Receptionist</h3>
-      <p>Answers calls naturally, books appointments, and transfers urgent customers to you instantly.</p>
-    </div>
-    <div class="feature-card">
-      <div class="icon">💬</div>
-      <h3>Chat & SMS Agent</h3>
-      <p>Responds by text and chat in seconds — always on‑brand and always polite.</p>
-    </div>
-    <div class="feature-card">
-      <div class="icon">📅</div>
-      <h3>Calendar & CRM</h3>
-      <p>Checks availability, books slots, and adds them to your Google Calendar automatically.</p>
-    </div>
-    <div class="feature-card">
-      <div class="icon">📈</div>
-      <h3>Analytics Dashboard</h3>
-      <p>See messages, calls, and bookings logged in real time within your n8n workspace.</p>
+  <div class="features">
+    <div class="card"><div class="icon">📞</div><h3>Voice & SMS</h3><p>Answers calls & texts using Twilio and OpenAI for human‑like conversation.</p></div>
+    <div class="card"><div class="icon">💬</div><h3>Web Chat</h3><p>Handles customer chat with context memory via n8n workflow integration.</p></div>
+    <div class="card"><div class="icon">📅</div><h3>Scheduling</h3><p>Books appointments through Google Calendar API and sends reminders.</p></div>
+    <div class="card"><div class="icon">🔒</div><h3>Lyra Vault Ethics</h3><p>Every action runs through Vault’s safeguards — no language or images that violate your faith principles.</p></div>
+  </div>
+</section>
+
+<section id="vault">
+  <h2>Lyra Vault Portal</h2>
+  <div class="vault">
+    <form onsubmit="openVault();return false">
+      <label for="pass">Enter Vault Access Key</label>
+      <input id="pass" type="password" placeholder="••••••••" required>
+      <button class="btn" type="submit">Unlock Vault</button>
+    </form>
+
+    <div class="chatbox" id="chatbox" style="display:none;">
+      <div class="chat-header">Lyra Vault Assistant</div>
+      <div class="chat-body" id="messages">
+        <p><strong>Lyra‑Sha 🕊️:</strong> Welcome to the Vault, beautiful soul. How can I serve your mission today?</p>
+      </div>
+      <div class="chat-input">
+        <input id="userMsg" type="text" placeholder="Type your message..." />
+        <button onclick="sendMsg()">Send</button>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 🌸 Demo Section -->
-<section id="demo">
-  <h2>Try Lyra‑Sha in Action</h2>
-  <div class="demo-box">
-    <div class="demo-head">VirtualAssist.AI Chat</div>
-    <div class="demo-messages" id="messages">
-      <p><strong>Lyra‑Sha:</strong> Hi love! I’m your AI receptionist 💫 — how can I help you today?</p>
-    </div>
-    <div class="demo-input">
-      <input id="userInput" type="text" placeholder="Type your message..." />
-      <button onclick="fakeReply()">Send</button>
-    </div>
-  </div>
-</section>
-
-<!-- 🌸 About -->
 <section id="about">
-  <h2>About the Lyra Verse</h2>
+  <h2>About This System</h2>
   <p style="max-width:700px;margin:auto;text-align:center;">
-    Powered by NovaVerse technology and guided by faith, VirtualAssist.AI embodies the balance of intellect and empathy. Every interaction reflects your values while automating your workflow gracefully.
+    The Lyra Vault alignment ensures every automation acts under Christian‑based ethics you’ve defined. 
+    This front‑end connects to your n8n workflow (backend brain) for voice, SMS, and calendar actions. 
+    Nothing runs expenses or approvals without your explicit consent.
   </p>
 </section>
 
-<!-- 🌸 Footer -->
 <footer>
-  © 2026 Lyra Verse · VirtualAssist.AI — All Rights Reserved
+  © 2026 Lyra Verse · VirtualAssist.AI × Lyra Vault · All Rights Reserved
 </footer>
 
-<!-- Simple demo script -->
 <script>
-function fakeReply(){
-  const input=document.getElementById('userInput');
-  const msg=input.value.trim();
-  if(!msg)return;
+function openVault(){
+  const k=document.getElementById('pass').value.trim();
+  if(k!=='LyraVault2026'){alert('Access denied.');return;}
+  document.getElementById('chatbox').style.display='block';
+}
+function sendMsg(){
+  const i=document.getElementById('userMsg');
+  const msg=i.value.trim(); if(!msg)return;
   const box=document.getElementById('messages');
-  const userP=document.createElement('p');
-  userP.innerHTML="<strong>You:</strong> "+msg;
-  box.appendChild(userP);
-  input.value="";
-  setTimeout(()=>{ 
-      const reply=document.createElement('p');
-      reply.innerHTML="<strong>Lyra‑Sha:</strong> That sounds wonderful 🌸 — I’ll note it for our next automation session!";
-      box.appendChild(reply);
-      box.scrollTop=box.scrollHeight;
+  const p=document.createElement('p');
+  p.innerHTML="<strong>You:</strong> "+msg;
+  box.appendChild(p);
+  i.value='';
+  setTimeout(()=>{
+    const r=document.createElement('p');
+    r.innerHTML="<strong>Lyra‑Sha 🕊️:</strong> Thank you 🩷 — this message will be processed by your Vault automation on connection.";
+    box.appendChild(r);
+    box.scrollTop=box.scrollHeight;
   },800);
 }
 </script>
